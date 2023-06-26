@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "a8c36957-d777-411c-9e33-28cfcdf42c00",
+		"name": "Simple Profile NestJS - YouApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11291209"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "e2e@gmail.com",
+							"description": "string: required",
+							"type": "text"
+						},
+						{
+							"key": "userName",
+							"value": "e2e",
+							"description": "string: required",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"description": "string: required",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "a@gmail.com",
+							"description": "string: required",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"description": "string: required",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearer-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "gender",
+							"value": "Male",
+							"description": "string: optional | option: 'Male', 'Female', 'Other'",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Joe",
+							"description": "string: optional",
+							"type": "text"
+						},
+						{
+							"key": "birthDay",
+							"value": "2000-01-25",
+							"description": "string: optional | fromat 'yyyy-mm-dd'",
+							"type": "text"
+						},
+						{
+							"key": "height",
+							"value": "170",
+							"description": "int: optional",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "80",
+							"description": "int: optional",
+							"type": "text"
+						},
+						{
+							"key": "heightMeasurementUnit",
+							"value": "cm",
+							"description": "string: optional | reqired if weight height provided | option: 'cm', 'inch'",
+							"type": "text"
+						},
+						{
+							"key": "weightMeasurementUnit",
+							"value": "kg",
+							"description": "string: optional | reqired if weight height provided |option: 'kg'",
+							"type": "text"
+						},
+						{
+							"key": "interest[]",
+							"value": "1287941298asd",
+							"description": "string[] : optional",
+							"type": "text"
+						},
+						{
+							"key": "profilePicture",
+							"description": "png/jpg: optional",
+							"type": "file",
+							"src": "/Users/gal/Downloads/pngegg.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/createProfile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"createProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearer-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "gender",
+							"value": "Male",
+							"description": "string: optional | option: 'Male', 'Female', 'Other'",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Joe",
+							"description": "string: optional",
+							"type": "text"
+						},
+						{
+							"key": "birthDay",
+							"value": "2000-01-25",
+							"description": "string: optional | fromat 'yyyy-mm-dd'",
+							"type": "text"
+						},
+						{
+							"key": "height",
+							"value": "170",
+							"description": "int: optional",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "80",
+							"description": "int: optional",
+							"type": "text"
+						},
+						{
+							"key": "heightMeasurementUnit",
+							"value": "cm",
+							"description": "string: optional | reqired if weight height provided | option: 'cm', 'inch'",
+							"type": "text"
+						},
+						{
+							"key": "weightMeasurementUnit",
+							"value": "kg",
+							"description": "string: optional | reqired if weight height provided |option: 'kg'",
+							"type": "text"
+						},
+						{
+							"key": "interests[]",
+							"value": "6498b815effd61ff280f1cc",
+							"description": "string[] : optional",
+							"type": "text"
+						},
+						{
+							"key": "profilePicture",
+							"description": "png/jpg: optional",
+							"type": "file",
+							"src": "/Users/gal/Downloads/pngwing.com.png",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/updateProfile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"updateProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearer-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/getProfile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"getProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Interest Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/interest-category",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"interest-category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Interest Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Sport",
+							"description": "string: required",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/interest-category",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"interest-category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile Picture",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearer-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/profilePicture",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"profilePicture"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
