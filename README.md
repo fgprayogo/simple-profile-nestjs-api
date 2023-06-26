@@ -47,11 +47,12 @@ The schema based on user requirement is like the picture bellow
 - ![Create Token](docs/images/integration-test.png)
   
 # Docker Build
-1.  Type this command to build the docker image
+1. Go to Dockerfile. Fill your ENV credentials 
+2. Type this command to build the docker image
   `docker build . -t fgprayogo/nestjs/simple-profile`
-2. Start the docker container using the image
+3. Start the docker container using the image
   `docker run --name simple-service -p 3000:3000 -d fgprayogo/nestjs/simple-profile`
-3. You should able access the service using your localhost network
+4. You should able access the service using your localhost network
 
 # REST API Documentation
 1. Go do `docs/api/images` directory and download the postman file
